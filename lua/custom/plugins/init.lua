@@ -5,6 +5,7 @@
 
 return {
   'github/copilot.vim',
+  'xiyaowong/transparent.nvim',
   {
     'akinsho/toggleterm.nvim',
     version = '*',
