@@ -199,10 +199,21 @@ vim.keymap.set('i', '<C-J>', 'copilot#Accept("\\<CR>")', {
   expr = true,
   replace_keycodes = false,
 })
+vim.g.copilot_no_tab_map = true
 vim.keymap.set('n', '<leader>z', function()
   vim.cmd 'ToggleTerm direction=float'
-end)
-vim.g.copilot_no_tab_map = true
+end, { desc = '[Z]sh' })
+-- NOTE: neovide configuration
+if vim.g.neovide then
+  vim.o.guifont = 'JetBrainsMono Nerd Font:h11'
+  vim.g.neovide_text_gamma = 0.0
+  vim.g.neovide_text_contrast = 0.5
+  vim.g.neovide_fullscreen = true
+  vim.g.neovide_remember_window_size = true
+  vim.g.neovide_cursor_animate_in_insert_mode = true
+  vim.g.neovide_cursor_animation_length = 0.1
+  vim.g.neovide_cursor_vfx_mode = 'sonicboom'
+end
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
